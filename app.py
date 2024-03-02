@@ -22,20 +22,21 @@ with open("image/trideep.jpg", "rb") as f:
         """,
         unsafe_allow_html=True,
     )
-
+section = st.sidebar.radio("Navigate", ["About", "Work", "Projects"])
 # Personal Information
 st.write("Location: Bolpur Sriniketan, West Bengal, India")
 linkedin_link = "[LinkedIn](https://www.linkedin.com/in/trideep-saha-b90950216/)"
 st.write("Email: trideepsaha009@gmail.com | Phone: +918670914733 | " + linkedin_link)
 
 # Summary
-st.header("Summary")
-st.write("Self-motivated and proven track record as an Account Assistant at CS bottling plant cum warehouse,\
-    demonstrating a commitment to work-driven decision-making. Physics Graduate with a passion for Python and data-driven solutions.\
-    Currently pursuing a Data Science certification at AlmaBetter,\
-    engaged in comprehensive Data Science training, gaining hands-on experience in Python, Machine Learning, \
-    Analytics and Web Scraping. \
-    Looking for immediate availability for new opportunities.")
+if section == "About":
+    st.header("Summary")
+    st.write("Self-motivated and proven track record as an Account Assistant at CS bottling plant cum warehouse,\
+        demonstrating a commitment to work-driven decision-making. Physics Graduate with a passion for Python and data-driven solutions.\
+        Currently pursuing a Data Science certification at AlmaBetter,\
+        engaged in comprehensive Data Science training, gaining hands-on experience in Python, Machine Learning, \
+        Analytics and Web Scraping. \
+        Looking for immediate availability for new opportunities.")
 
 # Skills
 with st.sidebar:
@@ -47,28 +48,29 @@ with st.sidebar:
     st.write("• Data Analytics")
     
 # Experience
-st.header("Work Experience")
+if section == "Work":
+    st.header("Work Experience")
 
-# with open("image/bottling.jpg", "rb") as f:
-#     bottling_image = f.read().decode("utf-8")
-st.subheader("Spirit Bottling Manufacturing Plant cum Warehouse (June 2016 - Nov 2023)")
-st.image("image/bottling.jpg", width=200, use_column_width=False)
-st.markdown("• Account Assistant")
-st.markdown(
-    "- Managed financial transactions and maintained accounts for Sarojit Kumar Dey CS bottling plant cum warehouse, ensuring accuracy and compliance with financial regulations.")
-st.markdown(
-    "- Implemented efficient production processes, contributing to the optimization of financial operations and enhancing overall workflow efficiency.")
+    # with open("image/bottling.jpg", "rb") as f:
+    #     bottling_image = f.read().decode("utf-8")
+    st.subheader("Spirit Bottling Manufacturing Plant cum Warehouse (June 2016 - Nov 2023)")
+    st.image("image/bottling.jpg", width=200, use_column_width=False)
+    st.markdown("• Account Assistant")
+    st.markdown(
+        "- Managed financial transactions and maintained accounts for Sarojit Kumar Dey CS bottling plant cum warehouse, ensuring accuracy and compliance with financial regulations.")
+    st.markdown(
+        "- Implemented efficient production processes, contributing to the optimization of financial operations and enhancing overall workflow efficiency.")
+    st.markdown(
+        "- Collaborated with team members to ensure timely completion of tasks and timely resolution of issues."
+    )
+    st.header("Competency Challenge")
+    st.subheader("AlmaBetter - Data Science Certification (Jun 2023 - Present)")
+    st.markdown(
+        "- Engaged in comprehensive Data Science training, acquiring proficiency in Python, Machine Learning, Analytics, and Web Scraping.")
+    st.markdown(
+        "- Successfully completed the **Competency Challenge**, demonstrating problem-solving skills and mastery over core concepts.")
 
-
-
-st.header("Competency Challenge")
-st.subheader("AlmaBetter - Data Science Certification (Jun 2023 - Present)")
-st.markdown(
-    "- Engaged in comprehensive Data Science training, acquiring proficiency in Python, Machine Learning, Analytics, and Web Scraping.")
-st.markdown(
-    "- Successfully completed the **Competency Challenge**, demonstrating problem-solving skills and mastery over core concepts.")
-
-# Education
+    # Education
 with st.sidebar:
     st.header("Education")
     st.write("• The University of Burdwan - Bachelor of Science (BS) in Physics")
@@ -76,53 +78,67 @@ with st.sidebar:
 
 
 # Projects
-st.header("Projects")
+if section == "Projects":
+    st.header("Projects")
+    # Project 1A
+    st.subheader("Indian Polity Chatbot: AI-powered UPSC Exam Preparation")
+    st.markdown("#### Tech Stack:")
+    st.write("• **Streamlit** | **LangChain** | **Hugging Face Transformers** 🤖")
 
-# Project 1
-st.subheader("Chat-With-Website Project: Conversational Web Experience")
-st.markdown("#### Tech Stack:")
-st.write("• **Streamlit** | **LangChain** | **Google Generative AI** 🤖")
+    st.markdown("#### Project Overview:")
+    st.markdown(
+        "The Indian Polity Chatbot is an AI-powered application designed for UPSC exam preparation. Using LangChain and Hugging Face Transformers, the chatbot allows users to ask questions about the Constitution of India and receive informative responses."
+    )
+    st.video("image/IndianConstitution final.mp4" , format="video/mp4")
+    st.write("➡ Project Link: [GitHub Repository](https://github.com/saha-trideep/IndianPolityBot/blob/main/README.md)")
 
-st.markdown("#### Project Overview:")
-st.markdown(
-    "Imagine a dialogue with a website for instant answers! Our Chat-With-Website extracts information using LangChain and Google Generative AI. Users can interact, ask questions, and receive responses based on the website's content."
-)
-st.video("image/uploadlinked.mp4", format="video/mp4")
-st.write("➡ Project Link: https://github.com/saha-trideep/Chat-With-Website")
+    # Project 1B
+    st.subheader("Chat-With-Website Project: Conversational Web Experience")
+    st.markdown("#### Tech Stack:")
+    st.write("• **Streamlit** | **LangChain** | **Google Generative AI** 🤖")
 
-# Project 2
-st.subheader("Web Scraping LinkedIn Job Data and Analyze it with Python")
-st.image("image/selenium.png", width=200, use_column_width=False)
-st.markdown("• **Python** | **Selenium** | **BeautifulSoup** | **Pandas**")
-st.markdown("• Forge a dynamic and robust **web scraping mechanism** capable of harvesting data science job postings from diverse online platforms.")
-st.markdown("• Extract and cleanse key information such as job titles, company names, descriptions, qualifications, salaries, locations, and deadlines.")
-st.write("➡ Project Link: https://colab.research.google.com/drive/1bBLaZc5GvQf-s7l8SottlWFaenhg_JG_?usp=sharing")
-
-# Project 3
-st.subheader("Breast Cancer Diagnosis App: Virtual Assistant for Medical Professionals")
-st.markdown("#### Tech Stack:")
-st.markdown("• **Python** | **Streamlit** | **Scikit-learn**")
-st.markdown("#### Project Overview:")
-st.markdown("Here's the gist: you input some measurements, and the app uses fancy machine learning tricks to predict if the lump is harmless or might need some attention. It even shows a radar chart with the data and tells you the chances of it being either good or not-so-great.")
-st.image("image/regressor.png", width=500, use_column_width=True)
-st.write("➡ Demo Link:[Streamlit Community Cloud](<https://8vcndpz6vixttytx7bdcny.streamlit.app/>).")
-st.write("➡ Project Link: https://github.com/saha-trideep/Regression-Model-App-Streamlit/blob/main/README.md")
+    st.markdown("#### Project Overview:")
+    st.markdown(
+        "Imagine a dialogue with a website for instant answers! Our Chat-With-Website extracts information using LangChain and Google Generative AI. Users can interact, ask questions, and receive responses based on the website's content."
+    )
+    st.video("image/uploadlinked.mp4", format="video/mp4")
+    st.write("➡ Project Link: https://github.com/saha-trideep/Chat-With-Website")
 
 
-# Project 4
-st.subheader("Clean Blog Project: Empowering Content Creation with Python and Flask")
-st.image("https://i0.wp.com/abitofpopmusic.com/wp-content/uploads/2014/10/taylor-swift-1989-album-cover.png?ssl=1",
-        width=200, use_column_width=False)
-st.markdown("#### Tech Stack:")
-st.markdown('• **Python** | **Flask** | **Bootstrap** | **SQLite** | **SQLAlchemy**')
-st.markdown("#### Project Overview:")
-st.markdown(
-    "Our Clean Blog project, built with Python and Flask, offers a dynamic content creation platform. The front-end design, implemented using Bootstrap, provides an engaging user experience. Data is efficiently stored in an SQLite database, with SQLAlchemy handling database operations. Passwords are hashed and salted for enhanced security, ensuring user data protection."
-)
-st.markdown(
-    "visiting this link: [Clean Blog Demo](https://clean-blog-c7g3.onrender.com)"
-)
-st.write("➡ Project Repository Link: https://github.com/saha-trideep/trideep-blog/blob/master/README.md")
+    st.markdown("#### Python Projects:")
+    # Project 2
+    st.subheader("Web Scraping LinkedIn Job Data and Analyze it with Python")
+    st.image("image/selenium.png", width=200, use_column_width=False)
+    st.markdown("• **Python** | **Selenium** | **BeautifulSoup** | **Pandas**")
+    st.markdown("• Forge a dynamic and robust **web scraping mechanism** capable of harvesting data science job postings from diverse online platforms.")
+    st.markdown("• Extract and cleanse key information such as job titles, company names, descriptions, qualifications, salaries, locations, and deadlines.")
+    st.write("➡ Project Link: https://colab.research.google.com/drive/1bBLaZc5GvQf-s7l8SottlWFaenhg_JG_?usp=sharing")
+
+    # Project 3
+    st.subheader("Breast Cancer Diagnosis App: Virtual Assistant for Medical Professionals")
+    st.markdown("#### Tech Stack:")
+    st.markdown("• **Python** | **Streamlit** | **Scikit-learn**")
+    st.markdown("#### Project Overview:")
+    st.markdown("Here's the gist: you input some measurements, and the app uses fancy machine learning tricks to predict if the lump is harmless or might need some attention. It even shows a radar chart with the data and tells you the chances of it being either good or not-so-great.")
+    st.image("image/regressor.png", width=500, use_column_width=True)
+    st.write("➡ Demo Link:[Streamlit Community Cloud](<https://8vcndpz6vixttytx7bdcny.streamlit.app/>).")
+    st.write("➡ Project Link: https://github.com/saha-trideep/Regression-Model-App-Streamlit/blob/main/README.md")
+
+
+    # Project 4
+    st.subheader("Clean Blog Project: Empowering Content Creation with Python and Flask")
+    st.image("https://i0.wp.com/abitofpopmusic.com/wp-content/uploads/2014/10/taylor-swift-1989-album-cover.png?ssl=1",
+            width=200, use_column_width=False)
+    st.markdown("#### Tech Stack:")
+    st.markdown('• **Python** | **Flask** | **Bootstrap** | **SQLite** | **SQLAlchemy**')
+    st.markdown("#### Project Overview:")
+    st.markdown(
+        "Our Clean Blog project, built with Python and Flask, offers a dynamic content creation platform. The front-end design, implemented using Bootstrap, provides an engaging user experience. Data is efficiently stored in an SQLite database, with SQLAlchemy handling database operations. Passwords are hashed and salted for enhanced security, ensuring user data protection."
+    )
+    st.markdown(
+        "visiting this link: [Clean Blog Demo](https://clean-blog-c7g3.onrender.com)"
+    )
+    st.write("➡ Project Repository Link: https://github.com/saha-trideep/trideep-blog/blob/master/README.md")
 
 # Project 5
 
@@ -156,7 +172,7 @@ with st.sidebar:
     "verification":{
     "type":"HostedBadge"
     },
-    "issuedOn":"2024-02-21T00:00:00.000Z",
+    "issuedOn":"2024-02-21  T00:00:00.000Z",
     "recipient":{
     "type":"email",
     "hashed":False,
