@@ -91,7 +91,8 @@ if section == "Projects":
     )
     st.video("image/IndianConstitution final.mp4" , format="video/mp4")
     st.write("➡ Project Link: [GitHub Repository](https://github.com/saha-trideep/IndianPolityBot/blob/main/README.md)")
-
+    st.write("➡ Demo Link: https://saha-trideep-indianpolitybot-app-xxyur0.streamlit.app/")
+    
     # Project 1B
     st.subheader("Chat-With-Website Project: Conversational Web Experience")
     st.markdown("#### Tech Stack:")
