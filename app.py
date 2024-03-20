@@ -79,8 +79,26 @@ with st.sidebar:
 
 # Projects
 if section == "Projects":
+    
     st.header("Projects")
     # Project 1A
+    # Chat with MySQL
+    st.subheader("Chat with MySQL: AI-Powered Database Interaction")
+    st.markdown("#### Tech Stack:")
+    st.write("• **Streamlit** | **MySQL-Python** | **langchain** 🤖")
+
+    st.markdown("#### Project Overview:")
+    st.markdown(
+        "Chat with MySQL is a Streamlit-based application that enables users to interact with a MySQL database using natural language queries. Leveraging natural language processing techniques, the AI assistant interprets user queries, generates corresponding SQL queries, executes them on the database, and presents the results back to the user in a conversational format."
+    )
+
+    # Include video and project/demo links once available
+    st.video("image/chatwithmysql.mp4", format="video/mp4")
+    st.write("➡ Project Link: [GitHub Repository](https://github.com/saha-trideep/Chat-With-SQL-Database.git)")
+    
+
+    st.header("Projects")
+    # Project 2A
     st.subheader("Indian Polity Chatbot: AI-powered UPSC Exam Preparation")
     st.markdown("#### Tech Stack:")
     st.write("• **Streamlit** | **LangChain** | **Hugging Face Transformers** 🤖")
