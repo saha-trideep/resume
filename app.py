@@ -42,10 +42,13 @@ if section == "About":
 with st.sidebar:
     st.header("Skills")
     st.write("• Python")
-    st.write("• Web Scraping")
-    st.write("• Backend Development")
+    st.write("• Scikit-learn")
+    st.write("• Pandas")
+    st.write("• LangChain (Natural Language Processing)")
+    st.write("• PyTorch (Deep Learning)")
+    st.write("• Data Analysis")
     st.write("• Machine Learning")
-    st.write("• Data Analytics")
+
     
 # Experience
 if section == "Work":
